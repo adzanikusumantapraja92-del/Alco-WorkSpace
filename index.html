@@ -37,6 +37,26 @@
       z-index: 0;
       pointer-events: none;
       filter: blur(0.2px);
+      transition: opacity 1.6s ease, filter 1.6s ease, transform 1.6s ease;
+      animation: logoGlowPulse 300s ease-in-out infinite;
+    }
+
+    @keyframes logoGlowPulse {
+      0%, 92%, 100% {
+        opacity: 0.03;
+        filter: blur(0.2px) drop-shadow(0 0 0 rgba(59, 130, 246, 0));
+        transform: rotate(-12deg) scale(1);
+      }
+      94% {
+        opacity: 0.06;
+        filter: blur(0px) drop-shadow(0 0 18px rgba(59, 130, 246, 0.18));
+        transform: rotate(-12deg) scale(1.03);
+      }
+      96% {
+        opacity: 0.09;
+        filter: blur(0px) drop-shadow(0 0 34px rgba(250, 204, 21, 0.26));
+        transform: rotate(-11deg) scale(1.06);
+      }
     }
 
     .container {
@@ -222,13 +242,43 @@
 
     .step-editor {
       position: relative;
-      background: rgba(248, 250, 252, 0.75);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.92));
+      border: 1px solid rgba(191, 219, 254, 0.8) !important;
+      box-shadow: 0 18px 34px rgba(37, 99, 235, 0.08);
     }
 
     .btn-remove-step {
-      position: absolute;
-      top: 12px;
-      right: 12px;
+      border-radius: 999px;
+    }
+
+    .step-editor-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .step-order-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      color: #1d4ed8;
+      font-weight: 700;
+      box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.14);
+    }
+
+    .step-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .step-toolbar .btn {
       border-radius: 999px;
     }
 
@@ -363,11 +413,15 @@
     }
 
     .module-panel {
-      background: rgba(255,255,255,0.95);
-      border-radius: 22px 0 0 22px;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.10), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96));
+      border-radius: 24px 0 0 24px;
       padding: 18px 20px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 22px 44px rgba(15, 23, 42, 0.12);
       border-left: 1px solid #e2e8f0;
+      border-top: 1px solid rgba(226, 232, 240, 0.88);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.88);
       min-height: 100%;
     }
 
@@ -389,6 +443,7 @@
       background: #eff6ff;
       color: #1d4ed8;
       font-weight: 600;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
     }
 
     .timer-status.focus {
@@ -440,6 +495,11 @@
       line-height: 1;
       font-weight: 700;
       color: #0f172a;
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #f8fafc, #ffffff);
+      border: 1px solid rgba(226, 232, 240, 0.92);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7);
     }
 
     .timer-actions {
@@ -478,6 +538,10 @@
       resize: vertical;
     }
 
+    .global-note-title-input {
+      margin-bottom: 10px;
+    }
+
     .shortcut-form {
       display: grid;
       grid-template-columns: 1fr 1.2fr auto;
@@ -501,10 +565,21 @@
     .shortcut-link {
       display: grid;
       justify-items: center;
-      gap: 8px;
+      gap: 10px;
       color: inherit;
       text-decoration: none;
       width: 100%;
+      padding: 14px 12px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(241,245,249,0.96));
+      border: 1px solid rgba(226, 232, 240, 0.92);
+      box-shadow: 0 14px 26px rgba(15, 23, 42, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .shortcut-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 32px rgba(15, 23, 42, 0.12);
     }
 
     .shortcut-icon {
@@ -514,9 +589,26 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: #eff6ff;
+      background: linear-gradient(135deg, #eff6ff, #ffffff);
       color: #2563eb;
       flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(191, 219, 254, 0.9);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7);
+    }
+
+    .shortcut-favicon {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .shortcut-fallback {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .shortcut-text {
@@ -537,11 +629,32 @@
       display: none;
     }
 
+    .shortcut-domain {
+      font-size: 11px;
+      color: #64748b;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+
     .shortcut-actions {
       display: flex;
       gap: 8px;
       justify-content: center;
       flex-shrink: 0;
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .shortcut-item:hover .shortcut-actions,
+    .shortcut-item.show-actions .shortcut-actions,
+    .shortcut-item:focus-within .shortcut-actions {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
 
     .shortcut-action-btn {
@@ -581,14 +694,21 @@
       border: 1px solid rgba(226, 232, 240, 0.9);
       border-radius: 18px;
       padding: 16px;
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.94));
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
     }
 
     .global-note-content {
       white-space: pre-wrap;
       color: #0f172a;
       line-height: 1.6;
+    }
+
+    .global-note-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 15px;
+      margin-bottom: 8px;
     }
 
     .global-note-meta {
@@ -1143,6 +1263,7 @@
               </div>
               <button id="btnSaveGlobalNote" type="button" class="btn btn-outline-secondary btn-sm">Simpan</button>
             </div>
+          <input id="globalNoteTitleInput" class="form-control global-note-title-input" placeholder="Nama catatan">
           <textarea id="globalNoteInput" class="form-control global-note-textarea" placeholder="Tulis catatan umum, prioritas hari ini, ringkasan meeting, atau pengingat penting..."></textarea>
           <div id="globalNoteStatus" class="step-meta mt-2 global-note-status">Belum ada catatan global.</div>
           <div id="globalNoteList" class="global-note-list"></div>
@@ -1435,6 +1556,7 @@
       btnTimerStart: document.getElementById("btnTimerStart"),
       btnTimerPause: document.getElementById("btnTimerPause"),
       btnTimerReset: document.getElementById("btnTimerReset"),
+      globalNoteTitleInput: document.getElementById("globalNoteTitleInput"),
       globalNoteInput: document.getElementById("globalNoteInput"),
       globalNoteStatus: document.getElementById("globalNoteStatus"),
       globalNoteList: document.getElementById("globalNoteList"),
@@ -1708,11 +1830,13 @@
     let currentGuide = { folder: null, index: null };
     let editState = { mode: "create", folder: null, index: null };
     let globalWorkspace = {
+      noteTitle: "",
       note: "",
       notes: [],
       shortcuts: []
     };
     let editingGlobalNoteId = null;
+    let shortcutLongPressTimer = null;
     let registeredAccounts = [];
     let accessRequests = [];
     let feedbackEntries = [];
@@ -1842,21 +1966,24 @@
         item && typeof item === "object" && typeof item.content === "string"
       ).map(item => ({
         id: item.id || uid("note"),
+        title: typeof item.title === "string" && item.title.trim() ? item.title.trim() : "Catatan tanpa judul",
         content: item.content,
         createdAt: item.createdAt || item.updatedAt || new Date().toISOString(),
         updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
       })) : [];
 
-      if (!savedNotes.length && typeof saved.note === "string" && saved.note.trim()) {
-        savedNotes.push({
-          id: uid("note"),
-          content: saved.note.trim(),
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString()
-        });
-      }
+        if (!savedNotes.length && typeof saved.note === "string" && saved.note.trim()) {
+          savedNotes.push({
+            id: uid("note"),
+            title: "Catatan lama",
+            content: saved.note.trim(),
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
+          });
+        }
 
       globalWorkspace = {
+        noteTitle: typeof saved.noteTitle === "string" ? saved.noteTitle : "",
         note: "",
         notes: savedNotes,
         shortcuts: Array.isArray(saved.shortcuts) ? saved.shortcuts.filter(item =>
@@ -2347,6 +2474,21 @@
       return "fa-solid fa-link";
     }
 
+    function getShortcutDomain(url) {
+      try {
+        return new URL(ensureUrlProtocol(url)).hostname.replace(/^www\./i, "");
+      } catch {
+        return String(url || "").replace(/^https?:\/\//i, "").split("/")[0];
+      }
+    }
+
+    function getShortcutFavicon(url) {
+      const safeUrl = ensureUrlProtocol(url);
+      return safeUrl
+        ? `https://www.google.com/s2/favicons?sz=128&domain_url=${encodeURIComponent(safeUrl)}`
+        : "";
+    }
+
     function renderShortcutList() {
       if (!globalWorkspace.shortcuts.length) {
         el.shortcutStatus.textContent = "Belum ada shortcut global.";
@@ -2356,12 +2498,22 @@
 
       el.shortcutStatus.textContent = `${globalWorkspace.shortcuts.length} shortcut siap dipakai.`;
       el.shortcutList.innerHTML = globalWorkspace.shortcuts.map(item => `
-        <div class="shortcut-item">
+        <div class="shortcut-item" data-shortcut-id="${esc(item.id)}">
           <a class="shortcut-link" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">
-            <span class="shortcut-icon"><i class="${esc(getShortcutIcon(item.url))}"></i></span>
+            <span class="shortcut-icon">
+              <img
+                class="shortcut-favicon"
+                src="${esc(getShortcutFavicon(item.url))}"
+                alt="${esc(item.title)}"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+              <span class="shortcut-fallback" style="display:none;">
+                <i class="${esc(getShortcutIcon(item.url))}"></i>
+              </span>
+            </span>
             <span class="shortcut-text">
               <span class="shortcut-title">${esc(item.title)}</span>
               <span class="shortcut-url">${esc(item.url)}</span>
+              <span class="shortcut-domain">${esc(getShortcutDomain(item.url))}</span>
             </span>
           </a>
           <div class="shortcut-actions">
@@ -2406,6 +2558,9 @@
               ${esc(formatChecklistDate(item.updatedAt || item.createdAt || ""))}
             </div>
             <div class="d-flex gap-2">
+              <button type="button" class="btn btn-sm btn-outline-primary" data-action="copy-global-note" data-id="${esc(item.id)}">
+                Copy
+              </button>
               <button type="button" class="btn btn-sm btn-outline-secondary" data-action="edit-global-note" data-id="${esc(item.id)}">
                 Edit
               </button>
@@ -2414,12 +2569,14 @@
               </button>
             </div>
           </div>
+          <div class="global-note-title">${esc(item.title || "Catatan tanpa judul")}</div>
           <div class="global-note-content">${nl2br(item.content)}</div>
         </div>
       `).join("");
     }
 
     function syncGlobalWorkspaceUI() {
+      el.globalNoteTitleInput.value = globalWorkspace.noteTitle || "";
       el.globalNoteInput.value = globalWorkspace.note || "";
       el.btnSaveGlobalNote.textContent = editingGlobalNoteId ? "Update Catatan" : "Simpan";
       const totalNotes = globalWorkspace.notes?.length || 0;
@@ -2431,7 +2588,12 @@
     }
 
     function saveGlobalNote() {
+      const title = el.globalNoteTitleInput.value.trim();
       const content = el.globalNoteInput.value.trim();
+      if (!title) {
+        setGlobalNoteStatus("Isi nama catatan dulu sebelum disimpan.", "error");
+        return;
+      }
       if (!content) {
         setGlobalNoteStatus("Isi catatan dulu sebelum disimpan.", "error");
         return;
@@ -2447,17 +2609,20 @@
           syncGlobalWorkspaceUI();
           return;
         }
+        target.title = title;
         target.content = content;
         target.updatedAt = new Date().toISOString();
       } else {
         globalWorkspace.notes.unshift({
           id: uid("note"),
+          title,
           content,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString()
         });
       }
 
+      globalWorkspace.noteTitle = "";
       globalWorkspace.note = "";
       if (!saveGlobalWorkspace()) {
         globalWorkspace.notes = previousNotes;
@@ -2466,6 +2631,7 @@
       }
 
       editingGlobalNoteId = null;
+      el.globalNoteTitleInput.value = "";
       el.globalNoteInput.value = "";
       syncGlobalWorkspaceUI();
       setGlobalNoteStatus("Catatan berhasil disimpan.", "success");
@@ -2479,11 +2645,12 @@
       }
 
       editingGlobalNoteId = id;
+      globalWorkspace.noteTitle = item.title || "";
       globalWorkspace.note = item.content;
       syncGlobalWorkspaceUI();
       setGlobalNoteStatus("Mode edit aktif. Ubah isi catatan lalu klik Update Catatan.");
-      el.globalNoteInput.focus();
-      el.globalNoteInput.setSelectionRange(item.content.length, item.content.length);
+      el.globalNoteTitleInput.focus();
+      el.globalNoteTitleInput.setSelectionRange((item.title || "").length, (item.title || "").length);
     }
 
     function deleteGlobalNote(id) {
@@ -2495,7 +2662,9 @@
       globalWorkspace.notes = globalWorkspace.notes.filter(note => note.id !== id);
       if (editingGlobalNoteId === id) {
         editingGlobalNoteId = null;
+        globalWorkspace.noteTitle = "";
         globalWorkspace.note = "";
+        el.globalNoteTitleInput.value = "";
         el.globalNoteInput.value = "";
       }
 
@@ -2507,6 +2676,22 @@
 
       syncGlobalWorkspaceUI();
       setGlobalNoteStatus("Catatan berhasil dihapus.", "success");
+    }
+
+    async function copyGlobalNote(id) {
+      const item = globalWorkspace.notes.find(note => note.id === id);
+      if (!item) {
+        setGlobalNoteStatus("Catatan tidak ditemukan.", "error");
+        return;
+      }
+
+      const payload = `${item.title || "Catatan tanpa judul"}\n\n${item.content || ""}`.trim();
+      try {
+        await navigator.clipboard.writeText(payload);
+        setGlobalNoteStatus(`Catatan "${item.title || "tanpa judul"}" berhasil disalin.`, "success");
+      } catch {
+        setGlobalNoteStatus("Gagal menyalin catatan.", "error");
+      }
     }
 
     function addShortcut() {
@@ -2567,6 +2752,12 @@
         return;
       }
       renderShortcutList();
+    }
+
+    function hideShortcutActions() {
+      el.shortcutList.querySelectorAll(".shortcut-item.show-actions").forEach((item) => {
+        item.classList.remove("show-actions");
+      });
     }
 
     function formatTimer(seconds) {
@@ -2857,7 +3048,14 @@
       el.btnTambahLabel.textContent = currentFolder ? "Tambah Panduan" : "Tambah Folder";
     }
 
-    function addStep(step = {}) {
+    function renumberStepEditors() {
+      el.langkahList.querySelectorAll(".langkah-item").forEach((row, index) => {
+        const badge = row.querySelector(".step-order-badge");
+        if (badge) badge.textContent = `Langkah ${index + 1}`;
+      });
+    }
+
+    function addStep(step = {}, options = {}) {
       const div = document.createElement("div");
       div.className = "langkah-item step-editor mb-3 border p-3 rounded";
 
@@ -2868,9 +3066,22 @@
         : "Belum ada media";
 
       div.innerHTML = `
-        <button type="button" class="btn btn-sm btn-outline-danger btn-remove-step" data-action="remove-step">
-          <i class="fas fa-trash"></i>
-        </button>
+        <div class="step-editor-head">
+          <span class="step-order-badge">Langkah</span>
+          <div class="step-toolbar">
+            <button type="button" class="btn btn-sm btn-outline-primary" data-action="insert-step-before">+ Sebelum</button>
+            <button type="button" class="btn btn-sm btn-outline-primary" data-action="insert-step-after">+ Sesudah</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-action="move-step-up" title="Geser ke atas">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-action="move-step-down" title="Geser ke bawah">
+              <i class="fas fa-arrow-down"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-danger btn-remove-step" data-action="remove-step">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
         <input class="form-control mb-2 step-text" placeholder="Langkah..." value="${esc(step.text || "")}">
         <input class="form-control mb-2 step-link" placeholder="Link (opsional)" value="${esc(step.link || "")}">
         <textarea class="form-control mb-2 step-note" placeholder="Catatan (bisa di copy)">${esc(step.catatan || "")}</textarea>
@@ -2890,7 +3101,15 @@
         </div>
       `;
 
-      el.langkahList.appendChild(div);
+      if (options.beforeRow) {
+        options.beforeRow.before(div);
+      } else if (options.afterRow) {
+        options.afterRow.after(div);
+      } else {
+        el.langkahList.appendChild(div);
+      }
+
+      renumberStepEditors();
     }
 
     function resetModal() {
@@ -2952,6 +3171,22 @@
       }
 
       row.remove();
+      renumberStepEditors();
+    }
+
+    function moveStep(button, direction) {
+      const row = button.closest(".langkah-item");
+      if (!row) return;
+
+      if (direction === "up" && row.previousElementSibling) {
+        row.previousElementSibling.before(row);
+      }
+
+      if (direction === "down" && row.nextElementSibling) {
+        row.nextElementSibling.after(row);
+      }
+
+      renumberStepEditors();
     }
 
     function hapusFolder(folder) {
@@ -3018,7 +3253,7 @@
 
       const langkah = [];
 
-      document.querySelectorAll("#langkahList .langkah-item").forEach((div) => {
+      el.langkahList.querySelectorAll(".langkah-item").forEach((div) => {
         const text = div.querySelector(".step-text").value.trim();
         const link = div.querySelector(".step-link").value.trim();
         const catatan = div.querySelector(".step-note").value.trim();
@@ -3850,12 +4085,38 @@
         if (action === "delete-shortcut") return deleteShortcut(id);
       });
 
+      el.shortcutList.addEventListener("pointerdown", (e) => {
+        const item = e.target.closest(".shortcut-item");
+        if (!item) return;
+        if (e.pointerType === "mouse") return;
+        if (e.target.closest(".shortcut-actions")) return;
+
+        clearTimeout(shortcutLongPressTimer);
+        shortcutLongPressTimer = window.setTimeout(() => {
+          hideShortcutActions();
+          item.classList.add("show-actions");
+        }, 450);
+      });
+
+      ["pointerup", "pointerleave", "pointercancel"].forEach((eventName) => {
+        el.shortcutList.addEventListener(eventName, () => {
+          clearTimeout(shortcutLongPressTimer);
+        });
+      });
+
       el.globalNoteList.addEventListener("click", (e) => {
         const button = e.target.closest("[data-action]");
         if (!button) return;
         const { action, id } = button.dataset;
+        if (action === "copy-global-note") return copyGlobalNote(id);
         if (action === "edit-global-note") return editGlobalNote(id);
         if (action === "delete-global-note") return deleteGlobalNote(id);
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("#shortcutList .shortcut-item")) {
+          hideShortcutActions();
+        }
       });
 
       el.accountList.addEventListener("click", (e) => {
@@ -3932,9 +4193,14 @@
       });
 
       el.langkahList.addEventListener("click", (e) => {
-        const button = e.target.closest('[data-action="remove-step"]');
+        const button = e.target.closest("[data-action]");
         if (!button) return;
-        removeStep(button);
+        const action = button.dataset.action;
+        if (action === "remove-step") return removeStep(button);
+        if (action === "move-step-up") return moveStep(button, "up");
+        if (action === "move-step-down") return moveStep(button, "down");
+        if (action === "insert-step-before") return addStep({}, { beforeRow: button.closest(".langkah-item") });
+        if (action === "insert-step-after") return addStep({}, { afterRow: button.closest(".langkah-item") });
       });
 
       el.popupLangkah.addEventListener("click", (e) => {

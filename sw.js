@@ -1,4 +1,4 @@
-const CACHE_NAME = "aladzan-corpora-v3";
+const CACHE_NAME = "aladzan-corpora-v5";
 const APP_ASSETS = [
   "./",
   "./login.html",
