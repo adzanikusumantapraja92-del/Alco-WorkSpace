@@ -207,6 +207,29 @@
       box-shadow: 0 25px 60px rgba(0,0,0,0.15);
     }
 
+    .step-nav-row {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .step-nav-button {
+      min-width: 112px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
+    }
+
+    .step-nav-button span {
+      line-height: 1;
+    }
+
     .step-popup img {
       user-select: none;
       -webkit-user-drag: none;
@@ -245,6 +268,66 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.92));
       border: 1px solid rgba(191, 219, 254, 0.8) !important;
       box-shadow: 0 18px 34px rgba(37, 99, 235, 0.08);
+      padding: 18px !important;
+    }
+
+    .step-editor .form-control {
+      border-radius: 14px;
+      border-color: rgba(203, 213, 225, 0.95);
+      box-shadow: none;
+    }
+
+    .step-editor .form-control:focus {
+      border-color: rgba(59, 130, 246, 0.9);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    }
+
+    .step-field {
+      margin-bottom: 12px;
+    }
+
+    .step-field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #475569;
+      margin-bottom: 6px;
+    }
+
+    .step-field-hint {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 6px;
+      line-height: 1.55;
+    }
+
+    .step-text {
+      min-height: 48px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #0f172a;
+    }
+
+    .step-link,
+    .step-media-url {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    .step-link-stack {
+      display: grid;
+      gap: 8px;
+    }
+
+    .step-link-select {
+      font-size: 13px;
+      border-radius: 12px;
+      border-color: rgba(191, 219, 254, 0.95);
+      background: rgba(239, 246, 255, 0.72);
     }
 
     .btn-remove-step {
@@ -400,6 +483,32 @@
       border-radius: 999px;
     }
 
+    .step-body-text {
+      font-size: 18px;
+      line-height: 1.65;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .step-section-card {
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 18px;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96));
+      margin-top: 14px;
+    }
+
+    .step-section-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
     .summary-chip {
       display: inline-flex;
       align-items: center;
@@ -459,6 +568,10 @@
     .timer-status.break {
       background: #dcfce7;
       color: #166534;
+    }
+
+    .timer-status .timer-lamp {
+      display: none;
     }
 
     .timer-lamp {
@@ -536,10 +649,118 @@
     .global-note-textarea {
       min-height: 140px;
       resize: vertical;
+      font-size: 14px;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .note-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .note-toolbar-btn {
+      min-width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid rgba(203, 213, 225, 0.95);
+      background: rgba(255,255,255,0.96);
+      color: #334155;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    .note-toolbar-btn:hover {
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .note-toolbar-btn strong,
+    .note-toolbar-btn em,
+    .note-toolbar-btn u {
+      pointer-events: none;
     }
 
     .global-note-title-input {
       margin-bottom: 10px;
+    }
+
+    .note-format-hint {
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(248, 250, 252, 0.95);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      color: #475569;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .step-note {
+      min-height: 96px;
+      font-size: 14px;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .step-note-shell {
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.9);
+      overflow: hidden;
+    }
+
+    .step-note-preview {
+      padding: 14px 15px 12px;
+      background: linear-gradient(180deg, rgba(248,250,252,0.96), rgba(255,255,255,0.98));
+    }
+
+    .step-note-preview-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .step-note-preview-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .step-note-preview-text {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.65;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 3.9em;
+    }
+
+    .step-note-preview-text.is-empty {
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    .step-note-editor {
+      padding: 0 15px 14px;
+      border-top: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .langkah-item.is-note-collapsed .step-note-editor {
+      display: none;
     }
 
     .shortcut-form {
@@ -698,10 +919,123 @@
       box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
     }
 
+    .global-note-item.is-expanded {
+      box-shadow: 0 20px 36px rgba(15, 23, 42, 0.12);
+      border-color: rgba(125, 211, 252, 0.95);
+    }
+
     .global-note-content {
-      white-space: pre-wrap;
       color: #0f172a;
-      line-height: 1.6;
+      line-height: 1.75;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .global-note-excerpt {
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.7;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .global-note-excerpt.is-empty {
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    .global-note-content[hidden] {
+      display: none !important;
+    }
+
+    .global-note-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .global-note-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .note-richtext {
+      color: #0f172a;
+      line-height: 1.75;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      overflow-wrap: anywhere;
+    }
+
+    .note-richtext p {
+      margin: 0 0 0.75rem;
+    }
+
+    .note-richtext p:last-child {
+      margin-bottom: 0;
+    }
+
+    .note-richtext ul,
+    .note-richtext ol {
+      margin: 0 0 0.9rem;
+      padding-left: 1.4rem;
+    }
+
+    .note-richtext li + li {
+      margin-top: 0.35rem;
+    }
+
+    .note-richtext strong {
+      font-weight: 700;
+      color: #020617;
+    }
+
+    .note-richtext em {
+      font-style: italic;
+      color: #334155;
+    }
+
+    .note-richtext u {
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
+
+    .note-richtext .align-left {
+      text-align: left;
+    }
+
+    .note-richtext .align-center {
+      text-align: center;
+    }
+
+    .note-richtext .align-right {
+      text-align: right;
+    }
+
+    .note-richtext .note-checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .note-richtext .note-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .note-richtext .note-checklist li::before {
+      content: "\f14a";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: #16a34a;
+      margin-top: 0.1rem;
     }
 
     .global-note-title {
@@ -732,6 +1066,7 @@
       display: grid;
       gap: 12px;
       z-index: 1080;
+      transition: right 0.24s ease, opacity 0.24s ease, transform 0.24s ease;
     }
 
     .dock-button {
@@ -746,6 +1081,7 @@
       align-items: center;
       justify-content: center;
       font-size: 20px;
+      transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
     }
 
     .dock-button:hover {
@@ -786,6 +1122,129 @@
 
     .offcanvas.offcanvas-end {
       width: min(420px, 92vw);
+    }
+
+    .app-exit-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(8px);
+      z-index: 1300;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .app-exit-overlay.active {
+      display: flex;
+    }
+
+    .app-exit-card {
+      width: min(420px, 100%);
+      border-radius: 26px;
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      box-shadow: 0 28px 56px rgba(15, 23, 42, 0.2);
+      padding: 22px;
+    }
+
+    .app-exit-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .app-exit-copy {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #475569;
+      margin-bottom: 18px;
+    }
+
+    .app-exit-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    body.drawer-active .floating-dock {
+      right: calc(min(420px, 92vw) + 18px);
+    }
+
+    body.drawer-active .floating-dock {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(18px, -50%);
+    }
+
+    .timer-floating-indicator {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 1090;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      color: #fff;
+      box-shadow: 0 20px 38px rgba(15, 23, 42, 0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .timer-floating-indicator.active {
+      display: inline-flex;
+    }
+
+    .timer-floating-indicator .timer-lamp {
+      display: inline-flex;
+      margin-right: 2px;
+    }
+
+    .timer-floating-time {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .timer-floating-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    body.drawer-active .floating-dock .dock-button:not([data-bs-target="#notesDrawer"]) {
+      opacity: 0;
+      transform: translateX(18px) scale(0.86);
+      pointer-events: none;
+    }
+
+    .step-note-preview-card {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step-note-preview-card .note-richtext[hidden] {
+      display: none !important;
+    }
+
+    .step-note-preview-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .step-note-inline-excerpt {
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.7;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .offcanvas-header {
@@ -1032,6 +1491,13 @@
         backdrop-filter: blur(12px);
       }
 
+      body.drawer-active .floating-dock {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(12px);
+        right: 12px;
+      }
+
       body.step-view-active .floating-dock,
       body.step-view-active .offcanvas,
       body.step-view-active .header-box,
@@ -1053,6 +1519,38 @@
         transform: none;
         border-radius: 0;
         padding: 20px 16px 28px;
+      }
+
+      .step-nav-row {
+        position: sticky;
+        left: auto;
+        right: auto;
+        bottom: 0;
+        top: auto;
+        padding: 12px 0 2px;
+        margin-top: 18px;
+        transform: none;
+        z-index: 2;
+        background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.96) 26%);
+      }
+
+      .step-nav-button {
+        width: 54px;
+        height: 54px;
+        min-width: 54px;
+        padding: 0;
+        border-radius: 999px;
+      }
+
+      .step-nav-button span {
+        display: none;
+      }
+
+      .timer-floating-indicator {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        justify-content: center;
       }
 
       body.step-view-active .overlay {
@@ -1145,15 +1643,40 @@
       </div>
       <div id="popupLangkah"></div>
 
-      <div class="mt-3 d-flex justify-content-between">
-        <button type="button" id="btnPrev" class="btn btn-secondary">Prev</button>
-        <button type="button" id="btnNext" class="btn btn-primary">Next</button>
+      <div class="step-nav-row">
+        <button type="button" id="btnPrev" class="btn btn-secondary step-nav-button" aria-label="Langkah sebelumnya">
+          <i class="fas fa-chevron-left"></i>
+          <span>Prev</span>
+        </button>
+        <button type="button" id="btnNext" class="btn btn-primary step-nav-button" aria-label="Langkah berikutnya">
+          <span>Next</span>
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
 
     <div id="overlay" class="overlay d-none"></div>
 
-    <div class="floating-dock">
+    <div id="appExitOverlay" class="app-exit-overlay">
+      <div class="app-exit-card">
+        <div class="app-exit-title">Keluar dari aplikasi?</div>
+        <div class="app-exit-copy">Kalau memang mau meninggalkan aplikasi, pilih Keluar. Kalau tidak jadi, tekan Cancel supaya tetap di halaman ini.</div>
+        <div class="app-exit-actions">
+          <button type="button" id="btnCancelExitApp" class="btn btn-outline-secondary">Cancel</button>
+          <button type="button" id="btnConfirmExitApp" class="btn btn-danger">Keluar APK</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="floatingTimerIndicator" class="timer-floating-indicator" aria-live="polite">
+      <i id="floatingTimerLamp" class="fas fa-lightbulb timer-lamp"></i>
+      <div>
+        <div id="floatingTimerTime" class="timer-floating-time">35:00</div>
+        <div id="floatingTimerLabel" class="timer-floating-label">Timer siap</div>
+      </div>
+    </div>
+
+    <div class="floating-dock" id="floatingDock">
       <button type="button" class="dock-button timer" data-bs-toggle="offcanvas" data-bs-target="#timerDrawer" title="Timer">
         <i class="fas fa-clock"></i>
       </button>
@@ -1236,15 +1759,19 @@
               </div>
             </div>
             <div>
-              <div class="timer-input-label">Audio Fokus Kustom</div>
-              <input id="focusAudioUrl" class="form-control" placeholder="https://...mp3 atau stream audio">
+              <div class="timer-input-label">File Audio Fokus</div>
+              <input id="focusAudioFile" type="file" class="form-control" accept="audio/*">
+              <input id="focusAudioUrl" type="hidden">
+              <div id="focusAudioStatus" class="step-meta mt-2">Belum ada file audio fokus.</div>
             </div>
             <div>
-              <div class="timer-input-label">Audio Istirahat Kustom</div>
-              <input id="breakAudioUrl" class="form-control" placeholder="https://...mp3 atau stream audio">
+              <div class="timer-input-label">File Audio Istirahat</div>
+              <input id="breakAudioFile" type="file" class="form-control" accept="audio/*">
+              <input id="breakAudioUrl" type="hidden">
+              <div id="breakAudioStatus" class="step-meta mt-2">Belum ada file audio istirahat.</div>
             </div>
           </div>
-          <div class="step-meta mt-3">Bisa pakai audio link luar. Paling stabil untuk file audio langsung seperti mp3/ogg/wav. Link YouTube tidak selalu bisa autoplay di dalam app.</div>
+          <div class="step-meta mt-3">Upload file audio sendiri untuk mode fokus atau istirahat. Format umum seperti mp3, wav, ogg, dan m4a bisa dipakai.</div>
         </div>
       </div>
     </div>
@@ -1264,7 +1791,21 @@
               <button id="btnSaveGlobalNote" type="button" class="btn btn-outline-secondary btn-sm">Simpan</button>
             </div>
           <input id="globalNoteTitleInput" class="form-control global-note-title-input" placeholder="Nama catatan">
+          <div class="note-toolbar" data-toolbar-target="globalNoteInput">
+            <button type="button" class="note-toolbar-btn" data-note-command="bold" title="Bold"><strong>B</strong></button>
+            <button type="button" class="note-toolbar-btn" data-note-command="italic" title="Italic"><em>I</em></button>
+            <button type="button" class="note-toolbar-btn" data-note-command="underline" title="Underline"><u>U</u></button>
+            <button type="button" class="note-toolbar-btn" data-note-command="align-left" title="Rata kiri"><i class="fas fa-align-left"></i></button>
+            <button type="button" class="note-toolbar-btn" data-note-command="align-center" title="Rata tengah"><i class="fas fa-align-center"></i></button>
+            <button type="button" class="note-toolbar-btn" data-note-command="align-right" title="Rata kanan"><i class="fas fa-align-right"></i></button>
+            <button type="button" class="note-toolbar-btn" data-note-command="bullet" title="Bullet list"><i class="fas fa-list-ul"></i></button>
+            <button type="button" class="note-toolbar-btn" data-note-command="numbered" title="Nomor"><i class="fas fa-list-ol"></i></button>
+            <button type="button" class="note-toolbar-btn" data-note-command="checklist" title="Checklist"><i class="fas fa-list-check"></i></button>
+          </div>
           <textarea id="globalNoteInput" class="form-control global-note-textarea" placeholder="Tulis catatan umum, prioritas hari ini, ringkasan meeting, atau pengingat penting..."></textarea>
+          <div class="note-format-hint">
+            Gunakan toolbar di atas untuk format cepat seperti bold, italic, underline, rata kiri/tengah/kanan, bullet, nomor, dan checklist.
+          </div>
           <div id="globalNoteStatus" class="step-meta mt-2 global-note-status">Belum ada catatan global.</div>
           <div id="globalNoteList" class="global-note-list"></div>
         </div>
@@ -1531,6 +2072,8 @@
       btnAccountsDock: document.getElementById("btnAccountsDock"),
       btnFeedbackDock: document.getElementById("btnFeedbackDock"),
       btnFeedbackInboxDock: document.getElementById("btnFeedbackInboxDock"),
+      floatingDock: document.getElementById("floatingDock"),
+      notesDrawer: document.getElementById("notesDrawer"),
       feedbackTypeInput: document.getElementById("feedbackTypeInput"),
       feedbackMessageInput: document.getElementById("feedbackMessageInput"),
       btnSubmitFeedback: document.getElementById("btnSubmitFeedback"),
@@ -1551,8 +2094,12 @@
       soundVolume: document.getElementById("soundVolume"),
       focusSoundEnabled: document.getElementById("focusSoundEnabled"),
       breakSoundEnabled: document.getElementById("breakSoundEnabled"),
+      focusAudioFile: document.getElementById("focusAudioFile"),
+      breakAudioFile: document.getElementById("breakAudioFile"),
       focusAudioUrl: document.getElementById("focusAudioUrl"),
       breakAudioUrl: document.getElementById("breakAudioUrl"),
+      focusAudioStatus: document.getElementById("focusAudioStatus"),
+      breakAudioStatus: document.getElementById("breakAudioStatus"),
       btnTimerStart: document.getElementById("btnTimerStart"),
       btnTimerPause: document.getElementById("btnTimerPause"),
       btnTimerReset: document.getElementById("btnTimerReset"),
@@ -1598,7 +2145,14 @@
       btnPrev: document.getElementById("btnPrev"),
       btnNext: document.getElementById("btnNext"),
       btnClosePopup: document.getElementById("btnClosePopup"),
-      overlay: document.getElementById("overlay")
+      overlay: document.getElementById("overlay"),
+      appExitOverlay: document.getElementById("appExitOverlay"),
+      btnCancelExitApp: document.getElementById("btnCancelExitApp"),
+      btnConfirmExitApp: document.getElementById("btnConfirmExitApp"),
+      floatingTimerIndicator: document.getElementById("floatingTimerIndicator"),
+      floatingTimerLamp: document.getElementById("floatingTimerLamp"),
+      floatingTimerTime: document.getElementById("floatingTimerTime"),
+      floatingTimerLabel: document.getElementById("floatingTimerLabel")
     };
 
     /* ======================
@@ -1631,6 +2185,175 @@
 
     function nl2br(text = "") {
       return esc(text).replace(/\n/g, "<br>");
+    }
+
+    function formatNoteInline(text = "") {
+      return esc(text)
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\[u\](.+?)\[\/u\]/g, "<u>$1</u>")
+        .replace(/(^|[^\*])\*([^\s][^*]*?[^\s]?)\*(?!\*)/g, "$1<em>$2</em>")
+        .replace(/(^|[^\w])_([^\s][^_]*?[^\s]?)_(?!\w)/g, "$1<em>$2</em>");
+    }
+
+    function formatRichNote(text = "") {
+      const source = String(text || "").replace(/\r\n/g, "\n").trim();
+      if (!source) return "";
+
+      const lines = source.split("\n");
+      const html = [];
+      let paragraph = [];
+      let listType = null;
+      let listItems = [];
+
+      function renderParagraphBlock(blockText) {
+        const trimmed = String(blockText || "").trim();
+        if (!trimmed) return "";
+
+        const alignMatch = trimmed.match(/^\[(left|center|right)\]\s*([\s\S]+?)\s*\[\/\1\]$/i);
+        if (alignMatch) {
+          const align = alignMatch[1].toLowerCase();
+          return `<p class="align-${align}">${formatNoteInline(alignMatch[2]).replace(/\n/g, "<br>")}</p>`;
+        }
+
+        return `<p>${formatNoteInline(trimmed).replace(/\n/g, "<br>")}</p>`;
+      }
+
+      function flushParagraph() {
+        if (!paragraph.length) return;
+        html.push(renderParagraphBlock(paragraph.join("\n")));
+        paragraph = [];
+      }
+
+      function flushList() {
+        if (!listType || !listItems.length) return;
+        const listClass = listType === "checklist" ? ' class="note-checklist"' : "";
+        const actualListType = listType === "checklist" ? "ul" : listType;
+        html.push(`<${actualListType}${listClass}>${listItems.map(item => `<li>${formatNoteInline(item)}</li>`).join("")}</${actualListType}>`);
+        listType = null;
+        listItems = [];
+      }
+
+      lines.forEach(rawLine => {
+        const line = rawLine.trim();
+
+        if (!line) {
+          flushParagraph();
+          flushList();
+          return;
+        }
+
+        const checklistMatch = line.match(/^[-*+]\s+\[(?: |x|X)\]\s+(.+)/);
+        if (checklistMatch) {
+          flushParagraph();
+          if (listType !== "checklist") {
+            flushList();
+            listType = "checklist";
+          }
+          listItems.push(checklistMatch[1]);
+          return;
+        }
+
+        const unorderedMatch = line.match(/^[-*+]\s+(.+)/);
+        if (unorderedMatch) {
+          flushParagraph();
+          if (listType !== "ul") {
+            flushList();
+            listType = "ul";
+          }
+          listItems.push(unorderedMatch[1]);
+          return;
+        }
+
+        const orderedMatch = line.match(/^\d+\.\s+(.+)/);
+        if (orderedMatch) {
+          flushParagraph();
+          if (listType !== "ol") {
+            flushList();
+            listType = "ol";
+          }
+          listItems.push(orderedMatch[1]);
+          return;
+        }
+
+        flushList();
+        paragraph.push(line);
+      });
+
+      flushParagraph();
+      flushList();
+
+      return html.join("");
+    }
+
+    function getNoteExcerpt(text = "", maxLength = 180) {
+      const normalized = String(text || "").replace(/\s+/g, " ").trim();
+      if (!normalized) return "";
+      if (normalized.length <= maxLength) return normalized;
+      return `${normalized.slice(0, maxLength).trimEnd()}...`;
+    }
+
+    function replaceTextSelection(input, nextValue, selectionStart, selectionEnd) {
+      input.value = nextValue;
+      input.focus();
+      input.setSelectionRange(selectionStart, selectionEnd);
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+
+    function wrapTextSelection(input, before, after = before, fallback = "teks") {
+      const start = input.selectionStart ?? input.value.length;
+      const end = input.selectionEnd ?? input.value.length;
+      const selected = input.value.slice(start, end) || fallback;
+      const nextValue = `${input.value.slice(0, start)}${before}${selected}${after}${input.value.slice(end)}`;
+      replaceTextSelection(input, nextValue, start + before.length, start + before.length + selected.length);
+    }
+
+    function prefixSelectedLines(input, prefixFactory) {
+      const start = input.selectionStart ?? 0;
+      const end = input.selectionEnd ?? input.value.length;
+      const lineStart = input.value.lastIndexOf("\n", Math.max(0, start - 1)) + 1;
+      const lineEndIndex = input.value.indexOf("\n", end);
+      const lineEnd = lineEndIndex === -1 ? input.value.length : lineEndIndex;
+      const selected = input.value.slice(lineStart, lineEnd);
+      const lines = selected.split("\n");
+      const nextBlock = lines.map((line, index) => prefixFactory(line, index)).join("\n");
+      const nextValue = `${input.value.slice(0, lineStart)}${nextBlock}${input.value.slice(lineEnd)}`;
+      replaceTextSelection(input, nextValue, lineStart, lineStart + nextBlock.length);
+    }
+
+    function wrapAlignedBlock(input, align) {
+      const start = input.selectionStart ?? input.value.length;
+      const end = input.selectionEnd ?? input.value.length;
+      const selected = input.value.slice(start, end) || "Teks";
+      const block = `[${align}]\n${selected}\n[/${align}]`;
+      const nextValue = `${input.value.slice(0, start)}${block}${input.value.slice(end)}`;
+      replaceTextSelection(input, nextValue, start + block.length, start + block.length);
+    }
+
+    function applyNoteCommand(input, command) {
+      if (!input) return;
+
+      if (command === "bold") return wrapTextSelection(input, "**", "**", "teks tebal");
+      if (command === "italic") return wrapTextSelection(input, "*", "*", "teks miring");
+      if (command === "underline") return wrapTextSelection(input, "[u]", "[/u]", "teks garis bawah");
+      if (command === "align-left") return wrapAlignedBlock(input, "left");
+      if (command === "align-center") return wrapAlignedBlock(input, "center");
+      if (command === "align-right") return wrapAlignedBlock(input, "right");
+      if (command === "bullet") return prefixSelectedLines(input, (line) => `- ${line.trim() || "Item"}`);
+      if (command === "numbered") return prefixSelectedLines(input, (line, index) => `${index + 1}. ${line.trim() || "Item"}`);
+      if (command === "checklist") return prefixSelectedLines(input, (line) => `- [ ] ${line.trim() || "Checklist"}`);
+    }
+
+    function resolveToolbarInput(button) {
+      const toolbar = button.closest(".note-toolbar");
+      if (!toolbar) return null;
+
+      const explicitTarget = toolbar.dataset.toolbarTarget;
+      if (explicitTarget) {
+        return document.getElementById(explicitTarget);
+      }
+
+      return toolbar.parentElement?.querySelector("textarea");
     }
 
     function formatBytes(bytes = 0) {
@@ -1836,11 +2559,14 @@
       shortcuts: []
     };
     let editingGlobalNoteId = null;
+    let expandedGlobalNoteId = null;
     let shortcutLongPressTimer = null;
     let registeredAccounts = [];
     let accessRequests = [];
     let feedbackEntries = [];
     let discountCodes = [];
+    let allowAppExit = false;
+    let exitGuardEnabled = false;
     let timerState = {
       mode: "focus",
       remainingSeconds: 35 * 60,
@@ -2489,6 +3215,36 @@
         : "";
     }
 
+    function renderStepShortcutOptions(selectedLink = "") {
+      const normalizedSelected = ensureUrlProtocol(selectedLink);
+      const shortcutOptions = (globalWorkspace.shortcuts || []).map(item => {
+        const shortcutUrl = ensureUrlProtocol(item.url);
+        const selected = shortcutUrl && shortcutUrl === normalizedSelected ? "selected" : "";
+        return `<option value="${esc(shortcutUrl)}" ${selected}>${esc(item.title)}${item.url ? ` • ${esc(getShortcutDomain(item.url))}` : ""}</option>`;
+      }).join("");
+
+      return `
+        <option value="">Pilih dari link global (opsional)</option>
+        ${shortcutOptions}
+      `;
+    }
+
+    function refreshStepShortcutSelect(row) {
+      if (!row) return;
+      const input = row.querySelector(".step-link");
+      const select = row.querySelector(".step-link-shortcut");
+      if (!input || !select) return;
+      const normalizedLink = ensureUrlProtocol(input.value.trim());
+      select.innerHTML = renderStepShortcutOptions(normalizedLink);
+      select.value = (globalWorkspace.shortcuts || []).some(item => ensureUrlProtocol(item.url) === normalizedLink) ? normalizedLink : "";
+    }
+
+    function refreshAllStepShortcutDropdowns() {
+      el.langkahList?.querySelectorAll(".langkah-item").forEach((row) => {
+        refreshStepShortcutSelect(row);
+      });
+    }
+
     function renderShortcutList() {
       if (!globalWorkspace.shortcuts.length) {
         el.shortcutStatus.textContent = "Belum ada shortcut global.";
@@ -2552,12 +3308,15 @@
       }
 
       el.globalNoteList.innerHTML = notes.map(item => `
-        <div class="global-note-item">
-          <div class="d-flex justify-content-between align-items-start gap-3 mb-2">
+        <div class="global-note-item ${expandedGlobalNoteId === item.id ? "is-expanded" : ""}">
+          <div class="global-note-header">
             <div class="global-note-meta">
               ${esc(formatChecklistDate(item.updatedAt || item.createdAt || ""))}
             </div>
-            <div class="d-flex gap-2">
+            <div class="global-note-actions">
+              <button type="button" class="btn btn-sm btn-primary" data-action="toggle-global-note-preview" data-id="${esc(item.id)}">
+                ${expandedGlobalNoteId === item.id ? "Tutup" : "Pratinjau"}
+              </button>
               <button type="button" class="btn btn-sm btn-outline-primary" data-action="copy-global-note" data-id="${esc(item.id)}">
                 Copy
               </button>
@@ -2570,9 +3329,15 @@
             </div>
           </div>
           <div class="global-note-title">${esc(item.title || "Catatan tanpa judul")}</div>
-          <div class="global-note-content">${nl2br(item.content)}</div>
+          <div class="global-note-excerpt ${item.content ? "" : "is-empty"}">${esc(getNoteExcerpt(item.content, 200) || "Belum ada isi catatan.")}</div>
+          <div class="global-note-content note-richtext" ${expandedGlobalNoteId === item.id ? "" : "hidden"}>${formatRichNote(item.content)}</div>
         </div>
       `).join("");
+    }
+
+    function toggleGlobalNotePreview(id) {
+      expandedGlobalNoteId = expandedGlobalNoteId === id ? null : id;
+      renderGlobalNoteList();
     }
 
     function syncGlobalWorkspaceUI() {
@@ -2585,6 +3350,7 @@
       );
       renderGlobalNoteList();
       renderShortcutList();
+      refreshAllStepShortcutDropdowns();
     }
 
     function saveGlobalNote() {
@@ -2645,6 +3411,7 @@
       }
 
       editingGlobalNoteId = id;
+      expandedGlobalNoteId = id;
       globalWorkspace.noteTitle = item.title || "";
       globalWorkspace.note = item.content;
       syncGlobalWorkspaceUI();
@@ -2660,6 +3427,9 @@
 
       const previousNotes = JSON.parse(JSON.stringify(globalWorkspace.notes || []));
       globalWorkspace.notes = globalWorkspace.notes.filter(note => note.id !== id);
+      if (expandedGlobalNoteId === id) {
+        expandedGlobalNoteId = null;
+      }
       if (editingGlobalNoteId === id) {
         editingGlobalNoteId = null;
         globalWorkspace.noteTitle = "";
@@ -2899,10 +3669,26 @@
       el.timerLamp.classList.add(isBreak ? "break" : (isNearBreak ? "warning" : "focus"));
       el.timerStatus.classList.toggle("break", isBreak);
       el.btnTimerPause.disabled = !timerState.running;
+      if (el.floatingTimerLamp) {
+        el.floatingTimerLamp.classList.remove("focus", "warning", "break");
+        el.floatingTimerLamp.classList.add(isBreak ? "break" : (isNearBreak ? "warning" : "focus"));
+      }
+      if (el.floatingTimerTime) {
+        el.floatingTimerTime.textContent = formatTimer(timerState.remainingSeconds);
+      }
+      if (el.floatingTimerLabel) {
+        el.floatingTimerLabel.textContent = phaseLabel;
+      }
+      if (el.floatingTimerIndicator) {
+        el.floatingTimerIndicator.classList.toggle("active", timerState.running);
+      }
 
       if (!timerState.running && timerState.remainingSeconds <= 0) {
         timerState.remainingSeconds = (isBreak ? prefs.breakMinutes : prefs.focusMinutes) * 60;
         el.timerDisplay.textContent = formatTimer(timerState.remainingSeconds);
+        if (el.floatingTimerTime) {
+          el.floatingTimerTime.textContent = formatTimer(timerState.remainingSeconds);
+        }
       }
     }
 
@@ -2966,13 +3752,45 @@
       el.breakSoundEnabled.checked = prefs.breakSoundEnabled;
       el.focusAudioUrl.value = prefs.focusAudioUrl;
       el.breakAudioUrl.value = prefs.breakAudioUrl;
+      if (el.focusAudioStatus) {
+        el.focusAudioStatus.textContent = prefs.focusAudioUrl ? "File audio fokus sudah tersimpan." : "Belum ada file audio fokus.";
+      }
+      if (el.breakAudioStatus) {
+        el.breakAudioStatus.textContent = prefs.breakAudioUrl ? "File audio istirahat sudah tersimpan." : "Belum ada file audio istirahat.";
+      }
       timerState.remainingSeconds = prefs.focusMinutes * 60;
       syncTimerDisplay();
     }
 
+    async function handleTimerAudioUpload(input, mode = "focus") {
+      const file = input?.files?.[0];
+      if (!file) return;
+
+      const hiddenInput = mode === "focus" ? el.focusAudioUrl : el.breakAudioUrl;
+      const statusEl = mode === "focus" ? el.focusAudioStatus : el.breakAudioStatus;
+
+      try {
+        if (statusEl) statusEl.textContent = `Mengupload file audio ${file.name}...`;
+        input.disabled = true;
+        const url = await uploadToFirebase(file, (percent) => {
+          if (statusEl) statusEl.textContent = `Upload audio ${percent}% - ${file.name}`;
+        });
+        hiddenInput.value = url;
+        saveTimerPreferences();
+        if (statusEl) statusEl.textContent = `Audio ${mode === "focus" ? "fokus" : "istirahat"}: ${file.name}`;
+        refreshAmbientSound();
+      } catch (error) {
+        console.error(error);
+        if (statusEl) statusEl.textContent = `Upload audio gagal untuk mode ${mode === "focus" ? "fokus" : "istirahat"}.`;
+        alert(error.message || "Upload audio gagal.");
+      } finally {
+        input.disabled = false;
+      }
+    }
+
     async function uploadToFirebase(file, onProgress) {
-      const allowed = file.type.startsWith("image/") || file.type.startsWith("video/");
-      if (!allowed) throw new Error("Hanya gambar atau video.");
+      const allowed = file.type.startsWith("image/") || file.type.startsWith("video/") || file.type.startsWith("audio/");
+      if (!allowed) throw new Error("Hanya file gambar, video, atau audio.");
 
       const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]+/g, "_");
       const ref = storage.ref(`files/${Date.now()}_${safeName}`);
@@ -3057,7 +3875,7 @@
 
     function addStep(step = {}, options = {}) {
       const div = document.createElement("div");
-      div.className = "langkah-item step-editor mb-3 border p-3 rounded";
+      div.className = "langkah-item step-editor mb-3 border p-3 rounded is-note-collapsed";
 
       const mediaValue = step.media || step.img || "";
       const mediaType = step.mediaType || (step.img ? "image" : "");
@@ -3082,11 +3900,51 @@
             </button>
           </div>
         </div>
-        <input class="form-control mb-2 step-text" placeholder="Langkah..." value="${esc(step.text || "")}">
-        <input class="form-control mb-2 step-link" placeholder="Link (opsional)" value="${esc(step.link || "")}">
-        <textarea class="form-control mb-2 step-note" placeholder="Catatan (bisa di copy)">${esc(step.catatan || "")}</textarea>
-        <input class="form-control mb-2 step-media-url" placeholder="Link media Google Drive / URL file (opsional)" value="${esc(mediaValue)}">
-        <input type="file" class="form-control mb-2 step-file" accept="image/*,video/*">
+        <div class="step-field">
+          <label class="step-field-label">Isi Langkah</label>
+          <input class="form-control step-text" placeholder="Contoh: Klik menu Produk lalu pilih paket aktif..." value="${esc(step.text || "")}">
+        </div>
+        <div class="step-field">
+          <label class="step-field-label">Link Pendukung</label>
+          <div class="step-link-stack">
+            <input class="form-control step-link" placeholder="https://... (opsional)" value="${esc(step.link || "")}">
+            <select class="form-select step-link-shortcut">
+              ${renderStepShortcutOptions(step.link || "")}
+            </select>
+          </div>
+        </div>
+        <div class="step-field">
+          <label class="step-field-label">Catatan Tambahan</label>
+          <div class="step-note-shell">
+            <div class="step-note-preview">
+              <div class="step-note-preview-head">
+                <span class="step-note-preview-label">Ringkasan Catatan</span>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-action="toggle-step-note-editor">Buka Editor</button>
+              </div>
+              <div class="step-note-preview-text ${step.catatan ? "" : "is-empty"}">${esc(getNoteExcerpt(step.catatan, 140) || "Belum ada catatan. Klik Buka Editor untuk menulis.")}</div>
+            </div>
+            <div class="step-note-editor">
+              <div class="note-toolbar">
+                <button type="button" class="note-toolbar-btn" data-note-command="bold" title="Bold"><strong>B</strong></button>
+                <button type="button" class="note-toolbar-btn" data-note-command="italic" title="Italic"><em>I</em></button>
+                <button type="button" class="note-toolbar-btn" data-note-command="underline" title="Underline"><u>U</u></button>
+                <button type="button" class="note-toolbar-btn" data-note-command="align-left" title="Rata kiri"><i class="fas fa-align-left"></i></button>
+                <button type="button" class="note-toolbar-btn" data-note-command="align-center" title="Rata tengah"><i class="fas fa-align-center"></i></button>
+                <button type="button" class="note-toolbar-btn" data-note-command="align-right" title="Rata kanan"><i class="fas fa-align-right"></i></button>
+                <button type="button" class="note-toolbar-btn" data-note-command="bullet" title="Bullet list"><i class="fas fa-list-ul"></i></button>
+                <button type="button" class="note-toolbar-btn" data-note-command="numbered" title="Nomor"><i class="fas fa-list-ol"></i></button>
+                <button type="button" class="note-toolbar-btn" data-note-command="checklist" title="Checklist"><i class="fas fa-list-check"></i></button>
+              </div>
+              <textarea class="form-control step-note" placeholder="Catatan (bisa di copy). Gunakan - untuk list, **tebal**, atau *miring*.">${esc(step.catatan || "")}</textarea>
+              <div class="step-field-hint mt-2">Cocok untuk ringkasan, checklist kecil, atau penekanan informasi penting.</div>
+            </div>
+          </div>
+        </div>
+        <div class="step-field">
+          <label class="step-field-label">Media atau File</label>
+          <input class="form-control mb-2 step-media-url" placeholder="Link media Google Drive / URL file (opsional)" value="${esc(mediaValue)}">
+          <input type="file" class="form-control step-file" accept="image/*,video/*">
+        </div>
         <input type="hidden" class="media-data" value="${esc(mediaValue)}">
         <input type="hidden" class="media-type" value="${esc(mediaType)}">
         <input type="hidden" class="media-name" value="${esc(step.mediaName || "")}">
@@ -3110,6 +3968,28 @@
       }
 
       renumberStepEditors();
+      refreshStepNotePreview(div);
+      refreshStepShortcutSelect(div);
+    }
+
+    function refreshStepNotePreview(row) {
+      if (!row) return;
+      const noteValue = row.querySelector(".step-note")?.value.trim() || "";
+      const preview = row.querySelector(".step-note-preview-text");
+      const toggleButton = row.querySelector('[data-action="toggle-step-note-editor"]');
+      if (preview) {
+        preview.textContent = getNoteExcerpt(noteValue, 140) || "Belum ada catatan. Klik Buka Editor untuk menulis.";
+        preview.classList.toggle("is-empty", !noteValue);
+      }
+      if (toggleButton) {
+        toggleButton.textContent = row.classList.contains("is-note-collapsed") ? (noteValue ? "Edit Catatan" : "Buka Editor") : "Ringkas";
+      }
+    }
+
+    function toggleStepNoteEditor(row) {
+      if (!row) return;
+      row.classList.toggle("is-note-collapsed");
+      refreshStepNotePreview(row);
     }
 
     function resetModal() {
@@ -3189,9 +4069,48 @@
       renumberStepEditors();
     }
 
-    function hapusFolder(folder) {
+    async function getCurrentAccountRecord() {
+      const email = String(activeEmail || "").trim().toLowerCase();
+      if (!email) return null;
+
+      const cached = registeredAccounts.find(item => item.email === email);
+      if (cached) return cached;
+
+      try {
+        const snapshot = await accountsCol.doc(accountDocId(email)).get();
+        if (!snapshot.exists) return null;
+        const data = snapshot.data() || {};
+        return {
+          id: snapshot.id,
+          name: data.name || "",
+          email,
+          role: data.role === "owner" ? "owner" : "user",
+          password: typeof data.password === "string" ? data.password : ""
+        };
+      } catch {
+        return null;
+      }
+    }
+
+    async function hapusFolder(folder) {
       if (!dataPanduan[folder]) return;
       if (!confirm(`Hapus folder "${folder}" beserta semua panduan di dalamnya?`)) return;
+
+      if (!isOwner) {
+        const inputPassword = prompt(`Masukkan password akun untuk menghapus folder "${folder}":`);
+        if (inputPassword === null) return;
+
+        const account = await getCurrentAccountRecord();
+        if (!account || !account.password) {
+          alert("Password akun tidak ditemukan. Coba login ulang atau hubungi owner.");
+          return;
+        }
+
+        if (inputPassword !== account.password) {
+          alert("Password yang dimasukkan tidak cocok. Folder batal dihapus.");
+          return;
+        }
+      }
 
       const previous = JSON.parse(JSON.stringify(dataPanduan));
       delete dataPanduan[folder];
@@ -3369,7 +4288,14 @@
                       <i class="fas fa-trash"></i>
                     </button>
                   </div>
-                ` : ""}
+                ` : `
+                  <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-outline-danger"
+                      data-action="delete-folder" data-folder="${encodeAttr(folder)}" title="Hapus folder">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                `}
               </div>
 
               <div class="text-center">
@@ -3606,22 +4532,26 @@
       el.popupJudul.textContent = `Langkah ${langkahIndex + 1}`;
       el.popupMeta.textContent = `${langkahIndex + 1} dari ${currentSteps.length} langkah`;
 
-      let html = `<div class="mb-2"><strong>${esc(step.text || "")}</strong></div>`;
+      let html = `<div class="step-body-text">${esc(step.text || "")}</div>`;
 
       if (ytId) {
         html += `
-          <div class="ratio ratio-16x9 mb-3">
-            <iframe
-              src="https://www.youtube.com/embed/${esc(ytId)}"
-              title="YouTube video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+          <div class="step-section-card">
+            <span class="step-section-label">Video Panduan</span>
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/${esc(ytId)}"
+                title="YouTube video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
           </div>
         `;
       } else if (normalizedLink) {
         html += `
-          <div class="mb-3">
+          <div class="step-section-card">
+            <span class="step-section-label">Link Pendukung</span>
             <a class="btn btn-outline-primary step-link-button" href="${esc(normalizedLink)}" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-up-right-from-square"></i>
               Buka Link
@@ -3633,34 +4563,41 @@
       if (media) {
         if (isGoogleDriveMedia) {
           html += `
-            <div class="ratio ratio-16x9 mb-3">
-              <iframe
-                src="${esc(mediaPreviewUrl)}"
-                title="Google Drive preview"
-                allow="autoplay"
-                allowfullscreen>
-              </iframe>
-            </div>
-            <div class="media-actions mb-3">
-              <a class="btn btn-outline-secondary btn-sm step-link-button" href="${esc(mediaOpenUrl)}" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-up-right-from-square"></i>
-                Buka File Asli
-              </a>
+            <div class="step-section-card">
+              <span class="step-section-label">Preview Media</span>
+              <div class="ratio ratio-16x9 mb-3">
+                <iframe
+                  src="${esc(mediaPreviewUrl)}"
+                  title="Google Drive preview"
+                  allow="autoplay"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="media-actions">
+                <a class="btn btn-outline-secondary btn-sm step-link-button" href="${esc(mediaOpenUrl)}" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-up-right-from-square"></i>
+                  Buka File Asli
+                </a>
+              </div>
             </div>
           `;
         } else if (mediaType === "video") {
           html += `
-            <div class="media-actions mb-3">
-              <a class="btn btn-outline-primary step-link-button" href="${esc(mediaOpenUrl)}" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-circle-play"></i>
-                Buka Video
-              </a>
-              <span class="step-meta">Video dari link eksternal lebih aman dibuka di tab baru.</span>
+            <div class="step-section-card">
+              <span class="step-section-label">Video</span>
+              <div class="media-actions">
+                <a class="btn btn-outline-primary step-link-button" href="${esc(mediaOpenUrl)}" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-circle-play"></i>
+                  Buka Video
+                </a>
+                <span class="step-meta">Video dari link eksternal lebih aman dibuka di tab baru.</span>
+              </div>
             </div>
           `;
         } else {
           html += `
-            <div class="mb-3">
+            <div class="step-section-card">
+              <span class="step-section-label">Gambar</span>
               <img src="${esc(media)}" class="img-fluid mt-2 rounded mb-2" alt="media langkah">
               ${mediaOpenUrl && mediaOpenUrl !== media ? `
                 <div>
@@ -3677,16 +4614,28 @@
 
       if (step.catatan) {
         html += `
-          <div class="border rounded p-3 mt-2 bg-light position-relative">
-            <small class="text-muted d-block mb-2">Catatan:</small>
-            <div>${nl2br(step.catatan)}</div>
-            <button
-              type="button"
-              class="btn btn-sm btn-primary position-absolute top-0 end-0 m-2"
-              id="btnCopyCatatan"
-              data-text="${esc(step.catatan)}">
-              Copy
-            </button>
+          <div class="step-section-card position-relative">
+            <small class="step-section-label">Catatan</small>
+            <div class="step-note-preview-card">
+              <div class="step-note-inline-excerpt">${esc(getNoteExcerpt(step.catatan, 200))}</div>
+              <div class="note-richtext" id="stepNotePreviewContent" hidden>${formatRichNote(step.catatan)}</div>
+              <div class="step-note-preview-actions">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary"
+                  id="btnToggleStepNotePreview"
+                  aria-expanded="false">
+                  Pratinjau Catatan
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-primary"
+                  id="btnCopyCatatan"
+                  data-text="${esc(step.catatan)}">
+                  Copy
+                </button>
+              </div>
+            </div>
           </div>
         `;
       }
@@ -3778,6 +4727,87 @@
       el.popup.classList.add("d-none");
       el.overlay.classList.add("d-none");
       setMobileStepFocus(false);
+    }
+
+    function isStandaloneLikeApp() {
+      return Boolean(
+        window.matchMedia?.("(display-mode: standalone)").matches ||
+        window.navigator.standalone === true ||
+        /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)
+      );
+    }
+
+    function showExitAppPrompt() {
+      el.appExitOverlay?.classList.add("active");
+    }
+
+    function hideExitAppPrompt() {
+      el.appExitOverlay?.classList.remove("active");
+    }
+
+    function closeTransientPanels() {
+      if (!el.popup.classList.contains("d-none")) {
+        closePopup();
+        return true;
+      }
+
+      const openOffcanvas = document.querySelector(".offcanvas.show");
+      if (openOffcanvas) {
+        const instance = bootstrap.Offcanvas.getInstance(openOffcanvas) || bootstrap.Offcanvas.getOrCreateInstance(openOffcanvas);
+        instance.hide();
+        return true;
+      }
+
+      const openModal = document.querySelector(".modal.show");
+      if (openModal) {
+        const instance = bootstrap.Modal.getInstance(openModal) || bootstrap.Modal.getOrCreateInstance(openModal);
+        instance.hide();
+        return true;
+      }
+
+      return false;
+    }
+
+    function setupExitGuard() {
+      if (exitGuardEnabled || !isStandaloneLikeApp()) return;
+      exitGuardEnabled = true;
+
+      history.pushState({ appGuard: true }, "", location.href);
+
+      window.addEventListener("popstate", () => {
+        if (allowAppExit) return;
+
+        if (closeTransientPanels()) {
+          history.pushState({ appGuard: true }, "", location.href);
+          return;
+        }
+
+        showExitAppPrompt();
+        history.pushState({ appGuard: true }, "", location.href);
+      });
+
+      window.addEventListener("beforeunload", (event) => {
+        if (allowAppExit) return;
+        event.preventDefault();
+        event.returnValue = "";
+      });
+    }
+
+    function confirmExitApp() {
+      allowAppExit = true;
+      hideExitAppPrompt();
+
+      try {
+        window.close();
+      } catch {}
+
+      window.setTimeout(() => {
+        history.back();
+      }, 120);
+    }
+
+    function syncDockWithDrawerState() {
+      document.body.classList.toggle("drawer-active", Boolean(document.querySelector(".offcanvas.show")));
     }
 
     /* ======================
@@ -3897,8 +4927,10 @@
        LOGOUT
     ====================== */
     function logout() {
+      allowAppExit = true;
       localStorage.removeItem("activeUser");
       localStorage.removeItem("activeRole");
+      localStorage.removeItem("activeEmail");
       location.href = "login.html";
     }
 
@@ -3991,6 +5023,27 @@
       if (el.btnAddDiscountCode) {
         el.btnAddDiscountCode.addEventListener("click", addDiscountCode);
       }
+      document.querySelectorAll(".offcanvas").forEach((panel) => {
+        panel.addEventListener("shown.bs.offcanvas", syncDockWithDrawerState);
+        panel.addEventListener("hidden.bs.offcanvas", syncDockWithDrawerState);
+      });
+      if (el.btnCancelExitApp) {
+        el.btnCancelExitApp.addEventListener("click", () => {
+          hideExitAppPrompt();
+          history.pushState({ appGuard: true }, "", location.href);
+        });
+      }
+      if (el.btnConfirmExitApp) {
+        el.btnConfirmExitApp.addEventListener("click", confirmExitApp);
+      }
+      if (el.appExitOverlay) {
+        el.appExitOverlay.addEventListener("click", (e) => {
+          if (e.target === el.appExitOverlay) {
+            hideExitAppPrompt();
+            history.pushState({ appGuard: true }, "", location.href);
+          }
+        });
+      }
       el.importFile.addEventListener("change", (e) => importPanduan(e.target.files[0]));
       el.focusMinutes.addEventListener("change", () => {
         const prefs = saveTimerPreferences();
@@ -4021,14 +5074,8 @@
         saveTimerPreferences();
         refreshAmbientSound();
       });
-      el.focusAudioUrl.addEventListener("change", () => {
-        saveTimerPreferences();
-        refreshAmbientSound();
-      });
-      el.breakAudioUrl.addEventListener("change", () => {
-        saveTimerPreferences();
-        refreshAmbientSound();
-      });
+      el.focusAudioFile?.addEventListener("change", () => handleTimerAudioUpload(el.focusAudioFile, "focus"));
+      el.breakAudioFile?.addEventListener("change", () => handleTimerAudioUpload(el.breakAudioFile, "break"));
       el.btnSaveGlobalNote.addEventListener("click", saveGlobalNote);
       el.btnAddShortcut.addEventListener("click", addShortcut);
       el.btnAddAccount.addEventListener("click", addRegisteredAccount);
@@ -4072,7 +5119,7 @@
         if (action === "backup-folder" && isOwner) return backupFolder(folder);
         if (action === "export-folder" && isOwner) return exportSingleFolder(folder);
         if (action === "edit-folder" && isOwner) return editFolder(folder);
-        if (action === "delete-folder" && isOwner) return hapusFolder(folder);
+        if (action === "delete-folder") return hapusFolder(folder);
         if (action === "edit-panduan" && isOwner) return editPanduan(folder, index);
         if (action === "delete-panduan" && isOwner) return hapusPanduan(folder, index);
       });
@@ -4108,6 +5155,7 @@
         const button = e.target.closest("[data-action]");
         if (!button) return;
         const { action, id } = button.dataset;
+        if (action === "toggle-global-note-preview") return toggleGlobalNotePreview(id);
         if (action === "copy-global-note") return copyGlobalNote(id);
         if (action === "edit-global-note") return editGlobalNote(id);
         if (action === "delete-global-note") return deleteGlobalNote(id);
@@ -4159,6 +5207,13 @@
         });
       }
 
+      document.addEventListener("click", (e) => {
+        const toolbarButton = e.target.closest(".note-toolbar-btn[data-note-command]");
+        if (!toolbarButton) return;
+        const input = resolveToolbarInput(toolbarButton);
+        applyNoteCommand(input, toolbarButton.dataset.noteCommand || "");
+      });
+
       el.langkahList.addEventListener("change", (e) => {
         if (e.target && e.target.matches(".step-file")) {
           handleMediaUpload(e.target);
@@ -4190,6 +5245,33 @@
             checkedAtInput.value = e.target.checked ? new Date().toISOString() : "";
           }
         }
+
+        if (e.target && e.target.matches(".step-note")) {
+          refreshStepNotePreview(e.target.closest(".langkah-item"));
+        }
+
+        if (e.target && e.target.matches(".step-link")) {
+          refreshStepShortcutSelect(e.target.closest(".langkah-item"));
+        }
+
+        if (e.target && e.target.matches(".step-link-shortcut")) {
+          const row = e.target.closest(".langkah-item");
+          const input = row?.querySelector(".step-link");
+          if (input) {
+            input.value = e.target.value || "";
+          }
+          refreshStepShortcutSelect(row);
+        }
+      });
+
+      el.langkahList.addEventListener("input", (e) => {
+        if (e.target && e.target.matches(".step-note")) {
+          refreshStepNotePreview(e.target.closest(".langkah-item"));
+        }
+
+        if (e.target && e.target.matches(".step-link")) {
+          refreshStepShortcutSelect(e.target.closest(".langkah-item"));
+        }
       });
 
       el.langkahList.addEventListener("click", (e) => {
@@ -4201,9 +5283,26 @@
         if (action === "move-step-down") return moveStep(button, "down");
         if (action === "insert-step-before") return addStep({}, { beforeRow: button.closest(".langkah-item") });
         if (action === "insert-step-after") return addStep({}, { afterRow: button.closest(".langkah-item") });
+        if (action === "toggle-step-note-editor") return toggleStepNoteEditor(button.closest(".langkah-item"));
       });
 
       el.popupLangkah.addEventListener("click", (e) => {
+        const previewButton = e.target.closest("#btnToggleStepNotePreview");
+        if (previewButton) {
+          const content = el.popupLangkah.querySelector("#stepNotePreviewContent");
+          if (!content) return;
+          const isHidden = content.hasAttribute("hidden");
+          if (isHidden) {
+            content.removeAttribute("hidden");
+            previewButton.textContent = "Tutup Pratinjau";
+            previewButton.setAttribute("aria-expanded", "true");
+          } else {
+            content.setAttribute("hidden", "");
+            previewButton.textContent = "Pratinjau Catatan";
+            previewButton.setAttribute("aria-expanded", "false");
+          }
+          return;
+        }
         const btn = e.target.closest("#btnCopyCatatan");
         if (btn) {
           copyCatatan(btn.dataset.text || "");
@@ -4223,6 +5322,7 @@
 
     async function initApp() {
       bindEvents();
+      setupExitGuard();
       setupPwaInstall();
       await loadRegisteredAccounts();
       renderRegisteredAccounts();

@@ -916,6 +916,16 @@
       }
     }
 
+    function redirectIfSessionActive() {
+      const activeUser = localStorage.getItem("activeUser");
+      const activeRole = localStorage.getItem("activeRole");
+      if (activeUser && activeRole) {
+        window.location.replace("index.html");
+      }
+    }
+
+    redirectIfSessionActive();
+
     function isValidGmail(email) {
       return /^[a-zA-Z0-9._%+-]+@gmail\.com$/i.test(String(email || "").trim());
     }
